@@ -3,6 +3,13 @@ import java.util.LinkedList;
 import java.util.NoSuchElementException;
 
 
+/**
+ * 
+ * @author Joseph Malandruccolo
+ *
+ * Implementation of a double-ended queue, also known as a deque (pronounced "deck")
+ * A deque supports inserting and removing items from either the front or the back of the data structure
+ */
 public class Deque<Item> implements Iterable<Item> {
 
 	//###########################################################################
@@ -18,6 +25,9 @@ public class Deque<Item> implements Iterable<Item> {
 	// =>	CONSTRUCTOR
 	//###########################################################################
 	
+	/**
+	 * Constructs an empty deque
+	 */
 	public Deque() {
 		this.data = new LinkedList<Item>();
 		this.size = 0;
@@ -64,6 +74,12 @@ public class Deque<Item> implements Iterable<Item> {
 		this.size++;
 	}
 	
+	
+	/**
+	 * Remove the item at the front of the Deque
+	 * @return the item at the front of the Deque
+	 * @throws UnsupportedOperationException on an empty deque
+	 */
 	public Item removeFirst() {
 		if (this.size <= 0) throw new UnsupportedOperationException();
 		Item item = data.removeFirst();
@@ -71,6 +87,12 @@ public class Deque<Item> implements Iterable<Item> {
 		return item;
 	}
 	
+	
+	/**
+	 * Remove the item at the back of the Deque
+	 * @return the item at the back of the Deque
+	 * @throws UnsupportedOperationException on an empty deque
+	 */
 	public Item removeLast() {
 		if (this.size <= 0) throw new UnsupportedOperationException();
 		Item item = data.removeLast();
