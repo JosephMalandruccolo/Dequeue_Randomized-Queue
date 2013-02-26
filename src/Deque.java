@@ -107,7 +107,7 @@ public class Deque<Item> implements Iterable<Item> {
 	//###########################################################################
 	
 	@Override
-	public Iterator iterator() { return new DequeIterator(); }
+	public Iterator<Item> iterator() { return new DequeIterator(); }
 
 
 	private class DequeIterator implements Iterator {
@@ -119,7 +119,7 @@ public class Deque<Item> implements Iterable<Item> {
 
 		@Override
 		public Item next() {
-			if (!(next < size)) throw new NoSuchElementException();
+			if (!this.hasNext()) throw new NoSuchElementException();
 			Item item = data.get(this.next);
 			next++;
 			return item;
