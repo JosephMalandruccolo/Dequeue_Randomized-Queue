@@ -16,16 +16,31 @@ public class Subset {
 	//###########################################################################
 	public static void main(String[] args) {
 		
+		
 		int k = Integer.parseInt(args[0]);
 		
 		RandomizedQueue<String> strings = new RandomizedQueue<String>();
-		while (StdIn.hasNextLine()) strings.enqueue(StdIn.readString());
+		while (!StdIn.isEmpty()) strings.enqueue(StdIn.readString());
 		
 		Iterator iterator = strings.iterator();
 		while (iterator.hasNext() && k > 0) {
 			StdOut.println(iterator.next());
 			k--;
 		}
+		
+		/*
+		RandomizedQueue<String> strings = new RandomizedQueue<String>();
+		strings.enqueue("times,");
+		strings.enqueue("it");
+		strings.enqueue("...");
+		
+		
+		Iterator iterator = strings.iterator();
+		while (iterator.hasNext()) {
+			System.out.println(iterator.next());
+		}
+		*/
+		
 		
 	}//end main
 	

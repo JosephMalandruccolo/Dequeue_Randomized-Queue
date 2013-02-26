@@ -107,27 +107,27 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 	private class RandomizedQueueIterator implements Iterator {
 
 		
-		ArrayList<Integer> availableIndices;
+		int[] indices;
+		int next = 0;
 		
 		
 		private RandomizedQueueIterator(){
-			this.availableIndices = new ArrayList<Integer>(size);
-			for (int i : availableIndices) availableIndices.set(i, i);
+			this.indices = new int[size];
+			for(int i = 0; i < this.indices.length; i++) this.indices[i] = i;
+			StdRandom.shuffle(this.indices);
 		}
 		
 		
-		
 		@Override
-		public boolean hasNext() { return this.availableIndices.size() > 0; }
+		public boolean hasNext() { return this.next < this.indices.length; }
 
 		@Override
 		//get a random index from our list of random indices, then remove that random index
 		public Item next() {
 			
 			if (!this.hasNext()) throw new NoSuchElementException();
-			int randomIndex = this.availableIndices.get(StdRandom.uniform(this.availableIndices.size()));
-			this.availableIndices.remove(randomIndex);
-			
+			int randomIndex = this.indices[this.next];
+			next++;
 			return data.get(randomIndex);
 			
 		}
@@ -140,4 +140,4 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 	
 	
 	
-}
+}//end RandomizedQueue
