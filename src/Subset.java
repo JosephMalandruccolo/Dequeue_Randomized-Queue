@@ -28,22 +28,5 @@ public class Subset {
 			k--;
 		}
 		
-		/*
-		RandomizedQueue<String> strings = new RandomizedQueue<String>();
-		strings.enqueue("times,");
-		strings.enqueue("it");
-		strings.enqueue("...");
-		
-		
-		Iterator iterator = strings.iterator();
-		while (iterator.hasNext()) {
-			System.out.println(iterator.next());
-		}
-		*/
-		
-		
 	}//end main
-	
-	
-
-}
+}//end Subset

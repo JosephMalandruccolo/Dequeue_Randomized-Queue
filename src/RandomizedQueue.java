@@ -95,8 +95,6 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 	
 	
 	
-	
-
 	//###########################################################################
 	// =>	ITERABLE
 	//###########################################################################
@@ -135,9 +133,5 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 		@Override
 		public void remove() { throw new UnsupportedOperationException(); }
 		
-	}
-	
-	
-	
-	
+	}//end RandomizedQueueIterato
 }//end RandomizedQueue
