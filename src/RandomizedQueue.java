@@ -2,8 +2,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
 
-import javax.swing.text.StyledEditorKit.ForegroundAction;
-
 /**
  * 
  * @author Joseph Malandruccolo
@@ -135,7 +133,7 @@ public class RandomizedQueue<Item> implements Iterable<Item> {
 		}
 
 		@Override
-		public void remove() { throw new NoSuchElementException(); }
+		public void remove() { throw new UnsupportedOperationException(); }
 		
 	}
 	

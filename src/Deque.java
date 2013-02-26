@@ -81,7 +81,7 @@ public class Deque<Item> implements Iterable<Item> {
 	 * @throws UnsupportedOperationException on an empty deque
 	 */
 	public Item removeFirst() {
-		if (this.size <= 0) throw new UnsupportedOperationException();
+		if (this.isEmpty()) throw new NoSuchElementException();
 		Item item = data.removeFirst();
 		this.size--;
 		return item;
@@ -94,7 +94,7 @@ public class Deque<Item> implements Iterable<Item> {
 	 * @throws UnsupportedOperationException on an empty deque
 	 */
 	public Item removeLast() {
-		if (this.size <= 0) throw new UnsupportedOperationException();
+		if (this.isEmpty()) throw new NoSuchElementException();
 		Item item = data.removeLast();
 		this.size--;
 		return item;
